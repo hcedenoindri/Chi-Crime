@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <link rel="stylesheet" href="listnr.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+        <title>Listnr</title>
     </head>
 
     <body>
-        <div id="home">
+        <header class="mdc-top-app-bar">
+            <div class="mdc-top-app-bar__row">
+              <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
+                <span class="mdc-top-app-bar__title">Page title</span>
+              </section>
+              <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Favorite">favorite</button>
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options">more_vert</button>
+              </section>
+            </div>
+        </header>
+        <main class="mdc-top-app-bar--fixed-adjust">
+            App content
+        </main>
+        <div id="home" class="shown">
 
         </div>
 
-        <div id="2">
+        <div id="2" class="hidden">
 
         </div>
 
-        <div id="3">
+        <div id="3" class="hidden">
 
         </div>
 
-        <div id="about">
-            
+        <div id="about" class="hidden">
+
         </div>
     </body>
 </html>
