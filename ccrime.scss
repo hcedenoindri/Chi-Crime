@@ -14,20 +14,23 @@
 
 @include icon-button.core-styles;
 
-.foo-button {
-  @include button.container-fill-color(darksalmon);
-}
+// PALETTE: DARK SIENNA (3E000C), SILVER (BFC0C0), WHITE,
+// PRUSSIAN BLUE (173753), CHARCOAL (1B4353)
 
-.tab-button1 {
-  @include button.container-fill-color(rgb(33, 199, 177));
-  @include tab.icon-color(black);
-  @include tab.text-label-color(black);
-}
-
+// ******************** TOP BAR ********************
 .top-app-bar {
-  @include top-app-bar.fill-color(black);
+  @include top-app-bar.fill-color(rgb(62, 0, 12));
 }
 
+// ******************** TAB BAR ********************
+.tab-button1 {
+  @include button.container-fill-color(white);
+  @include tab.text-label-color(rgb(62, 0, 12));
+  @include tab-indicator.underline-color(rgb(62, 0, 12));
+  @include tab.states-color(silver);
+}
+
+// ******************** PAGES ********************
 .app-content {
   padding-top: 106px;
 }

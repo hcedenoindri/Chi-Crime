@@ -8,27 +8,55 @@
     </head>
 
     <body>
+      <!-- ******************** TOP BAR ******************** -->
       <header class="top-app-bar mdc-top-app-bar mdc-top-app-bar--short">
         <div class="mdc-top-app-bar__row">
           <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
             <span class="mdc-top-app-bar__title">Chi-Crime</span>
           </section>
-          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-            <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
-            <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options">more_vert</button>
-          </section>
         </div>
 
+        <!-- ******************** TAB BAR ******************** -->
         <div class="mdc-tab-bar" role="tablist">
           <div class="mdc-tab-scroller">
             <div class="mdc-tab-scroller__scroll-area">
               <div class="mdc-tab-scroller__scroll-content">
+                <!-- HOME BUTTON -->
                 <button class="tab-button1 mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
                   <span class="mdc-tab__content">
-                    <span class="mdc-tab__icon material-icons" aria-hidden="true">favorite</span>
-                    <span class="mdc-tab__text-label">Favorites</span>
+                    <span class="mdc-tab__text-label">Home</span>
                   </span>
                   <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                  </span>
+                  <span class="mdc-tab__ripple"></span>
+                </button>
+                <!-- SEARCH BUTTON -->
+                <button class="tab-button1 mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                  <span class="mdc-tab__content">
+                    <span class="mdc-tab__text-label">Search</span>
+                  </span>
+                  <span class="mdc-tab-indicator">
+                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                  </span>
+                  <span class="mdc-tab__ripple"></span>
+                </button>
+                <!--  RESULTS BUTTON -->
+                <button class="tab-button1 mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                  <span class="mdc-tab__content">
+                    <span class="mdc-tab__text-label">Results</span>
+                  </span>
+                  <span class="mdc-tab-indicator">
+                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                  </span>
+                  <span class="mdc-tab__ripple"></span>
+                </button>
+                <!-- ABOUT BUTTON -->
+                <button class="tab-button1 mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                  <span class="mdc-tab__content">
+                    <span class="mdc-tab__text-label">About</span>
+                  </span>
+                  <span class="mdc-tab-indicator">
                     <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
                   </span>
                   <span class="mdc-tab__ripple"></span>
@@ -39,28 +67,32 @@
         </div>
       </header>
 
+      <!-- ******************** PAGE DISPLAYS ******************** -->
       <main class="app-content mdc-top-app-bar--fixed-adjust">
+
+        <!-- ******************** HOME PAGE ******************** -->
         <div id="home" class="shown">
           <p>App content<br>Hello World</p>
-
-          <button class="foo-button mdc-button">
-            <div class="mdc-button__ripple"></div>
-            <span class="mdc-button__label">Button</span>
-          </button>
         </div>
 
+        <!-- ******************** SEARCH PAGE ******************** -->
         <div id="search" class="hidden">
 
         </div>
 
+        <!-- ******************** RESULTS PAGE ******************** -->
         <div id="results" class="hidden">
 
         </div>
 
+        <!-- ******************** ABOUT PAGE ******************** -->
         <div id="about" class="hidden">
 
         </div>
+
+        <!-- ******************** END OF PAGES ******************** -->
       </main>
 
+    <!-- ******************** END OF BODY ******************** -->
     </body>
 </html>
