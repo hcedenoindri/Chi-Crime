@@ -1,3 +1,6 @@
+// PALETTE: DARK SIENNA (3E000C), SILVER (BFC0C0), WHITE,
+// PRUSSIAN BLUE (173753), CHARCOAL (1B4353)
+@use "sass:map";
 @use '@material/button';
 @use '@material/button/mdc-button';
 @use "@material/icon-button";
@@ -11,19 +14,78 @@
 @use "@material/tab-indicator/mdc-tab-indicator";
 @use "@material/tab";
 @use "@material/tab/mdc-tab";
+@use "@material/list";
+@use "@material/list/mdc-list";
+@use "@material/menu-surface";
+@use "@material/menu-surface/mdc-menu-surface";
+@use "@material/menu";
+@use "@material/menu/mdc-menu";
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
 @include icon-button.core-styles;
 
-// PALETTE: DARK SIENNA (3E000C), SILVER (BFC0C0), WHITE,
-// PRUSSIAN BLUE (173753), CHARCOAL (1B4353)
+// ******************** TYPOGRAPHY ********************
+$mdc-typography-styles-headline1: (
+  font-family: unquote("Roboto"),
+  font-size: 96
+);
+$mdc-typography-styles-headline2: (
+  font-family: unquote("Roboto"),
+  font-size: 60
+);
+$mdc-typography-styles-headline3: (
+  font-family: unquote("Roboto"),
+  font-size: 48
+);
+$mdc-typography-styles-headline4: (
+  font-family: unquote("Roboto"),
+  font-size: 34
+);
+$mdc-typography-styles-headline5: (
+  font-family: unquote("Roboto"),
+  font-size: 24
+);
+$mdc-typography-styles-headline6: (
+  font-family: unquote("Roboto"),
+  font-size: 20
+);
+$mdc-typography-styles-body1: (
+  font-family: unquote("Roboto"),
+  font-size: 16
+);
+$mdc-typography-styles-body2: (
+  font-family: unquote("Roboto"),
+  font-size: 14
+);
+$mdc-typography-styles-subtitle1: (
+  font-family: unquote("Roboto"),
+  font-size: 16
+);
+$mdc-typography-styles-subtitle2: (
+  font-family: unquote("Roboto"),
+  font-size: 14
+);
+$mdc-typography-styles-button: (
+  font-family: unquote("Roboto"),
+  font-size: 14
+);
+$mdc-typography-styles-overline: (
+  font-family: unquote("Roboto"),
+  font-size: 10
+);
+$mdc-typography-styles-caption: (
+  font-family: unquote("Roboto"),
+  font-size: 12
+);
 
 // ******************** TOP BAR ********************
 .top-app-bar {
+  text-align: center;
   @include top-app-bar.fill-color(rgb(62, 0, 12));
 }
 
 // ******************** TAB BAR ********************
-.tab-button1 {
+.mdc-tab {
   @include button.container-fill-color(white);
   @include tab.text-label-color(rgb(62, 0, 12));
   @include tab-indicator.underline-color(rgb(62, 0, 12));
@@ -31,7 +93,13 @@
 }
 
 // ******************** PAGES ********************
+h3 {
+  font-family: map.get($mdc-typography-styles-headline3, "font-family");
+  font-size: map.get($mdc-typography-styles-headline3, "font-size");
+}
 .app-content {
   padding-top: 106px;
 }
+
+
 

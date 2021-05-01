@@ -22,7 +22,7 @@
             <div class="mdc-tab-scroller__scroll-area">
               <div class="mdc-tab-scroller__scroll-content">
                 <!-- HOME BUTTON -->
-                <button class="tab-button1 mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                <button id="home" class="tab-button mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
                   <span class="mdc-tab__content">
                     <span class="mdc-tab__text-label">Home</span>
                   </span>
@@ -32,7 +32,7 @@
                   <span class="mdc-tab__ripple"></span>
                 </button>
                 <!-- SEARCH BUTTON -->
-                <button class="tab-button1 mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                <button id="search" class="tab-button mdc-tab" role="tab" aria-selected="true" tabindex="1">
                   <span class="mdc-tab__content">
                     <span class="mdc-tab__text-label">Search</span>
                   </span>
@@ -42,7 +42,7 @@
                   <span class="mdc-tab__ripple"></span>
                 </button>
                 <!--  RESULTS BUTTON -->
-                <button class="tab-button1 mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                <button id="results" class="tab-button mdc-tab" role="tab" aria-selected="true" tabindex="2">
                   <span class="mdc-tab__content">
                     <span class="mdc-tab__text-label">Results</span>
                   </span>
@@ -52,7 +52,7 @@
                   <span class="mdc-tab__ripple"></span>
                 </button>
                 <!-- ABOUT BUTTON -->
-                <button class="tab-button1 mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                <button id="about" class="tab-button mdc-tab" role="tab" aria-selected="true" tabindex="3">
                   <span class="mdc-tab__content">
                     <span class="mdc-tab__text-label">About</span>
                   </span>
@@ -72,22 +72,50 @@
 
         <!-- ******************** HOME PAGE ******************** -->
         <div id="home" class="shown">
-          <p>App content<br>Hello World</p>
+          <h3>Home</h3>
+          <!-- Show geolocation feature -->
         </div>
 
         <!-- ******************** SEARCH PAGE ******************** -->
         <div id="search" class="hidden">
-
+          <!-- Show search UI -->
+          <h3>Search</h3>
+          <select id="fields" name="select">
+            <option> Filter by... </option>
+          </select>
+          <!-- <form id="form-data" class="mdc-menu-surface--anchor"> -->
+            <!-- <input id="find" type="text" name="" placeholder="Find...">   -->
+            <div id="hero">
+              <div class="mdc-menu mdc-menu-surface mdc-menu-surface--open">
+                <ul class="mdc-list" role="menu" aria-hidden="false" aria-orientation="vertical" tabindex="-1">
+                  <li class="mdc-list-item" role="menuitem">
+                    <span class="mdc-list-item__ripple"></span>
+                    <span class="mdc-list-item__text">A Menu Item</span>
+                  </li>
+                  <li class="mdc-list-item" role="menuitem">
+                    <span class="mdc-list-item__ripple"></span>
+                    <span class="mdc-list-item__text">Another Menu Item</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <br>
+          <!-- </form> -->
+          <button class="mdc-button mdc-button--outlined">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">Search</span>
+          </button><br>
+          <p style="font-weight: bold;">Note: Input is case sensitive. Please look through each example below.<br></p>
         </div>
 
         <!-- ******************** RESULTS PAGE ******************** -->
         <div id="results" class="hidden">
-
+          <h3>Results</h3>
         </div>
 
         <!-- ******************** ABOUT PAGE ******************** -->
         <div id="about" class="hidden">
-
+          <h3>About</h3>
         </div>
 
         <!-- ******************** END OF PAGES ******************** -->
