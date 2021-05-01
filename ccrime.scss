@@ -1,5 +1,3 @@
-// PALETTE: DARK SIENNA (3E000C), SILVER (BFC0C0), WHITE,
-// PRUSSIAN BLUE (173753), CHARCOAL (1B4353)
 @use "sass:map";
 @use '@material/button';
 @use '@material/button/mdc-button';
@@ -20,9 +18,17 @@
 @use "@material/menu-surface/mdc-menu-surface";
 @use "@material/menu";
 @use "@material/menu/mdc-menu";
+@use "@material/select";
+@use "@material/select/styles";
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
 @include icon-button.core-styles;
+
+// PALETTE: DARK SIENNA (3E000C), SILVER (BFC0C0), WHITE,
+// PRUSSIAN BLUE (173753), CHARCOAL (1B4353)
+$DARK_SIENNA: #3E000C;
+$CHARCOAL: #1B4353;
+$PRUSSIAN_BLUE: #173753;
 
 // ******************** TYPOGRAPHY ********************
 $mdc-typography-styles-headline1: (
@@ -78,24 +84,22 @@ $mdc-typography-styles-caption: (
   font-size: 12
 );
 
-// ******************** TOP BAR ********************
-.top-app-bar {
-  text-align: center;
-  @include top-app-bar.fill-color(rgb(62, 0, 12));
-}
-
 // ******************** TAB BAR ********************
 .mdc-tab {
-  @include button.container-fill-color(white);
+  @include button.container-fill-color(silver);
   @include tab.text-label-color(rgb(62, 0, 12));
   @include tab-indicator.underline-color(rgb(62, 0, 12));
-  @include tab.states-color(silver);
+  @include tab.states-color($PRUSSIAN_BLUE);
 }
 
-// ******************** PAGES ********************
+// ******************** PAGE DISPLAYS ********************
 h3 {
   font-family: map.get($mdc-typography-styles-headline3, "font-family");
   font-size: map.get($mdc-typography-styles-headline3, "font-size");
+}
+p, a, span {
+  font-family: map-get($mdc-typography-styles-body1, "font-family");
+  font-size: map-get($mdc-typography-styles-body1, "font-size");
 }
 .app-content {
   padding-top: 106px;

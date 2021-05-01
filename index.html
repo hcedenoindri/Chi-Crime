@@ -11,7 +11,7 @@
       <!-- ******************** TOP BAR ******************** -->
       <header class="top-app-bar mdc-top-app-bar mdc-top-app-bar--short">
         <div class="mdc-top-app-bar__row">
-          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <section class="mdc-top-app-bar__section" style="justify-content: center !important;">
             <span class="mdc-top-app-bar__title">Chi-Crime</span>
           </section>
         </div>
@@ -68,59 +68,105 @@
       </header>
 
       <!-- ******************** PAGE DISPLAYS ******************** -->
-      <main class="app-content mdc-top-app-bar--fixed-adjust">
+      <main class="app-content mdc-top-app-bar--short-fixed-adjust">
 
         <!-- ******************** HOME PAGE ******************** -->
         <div id="home" class="shown">
           <h3>Home</h3>
           <!-- Show geolocation feature -->
+        
+        <!-- ******************** END HOME PAGE ******************** -->
         </div>
 
         <!-- ******************** SEARCH PAGE ******************** -->
         <div id="search" class="hidden">
           <!-- Show search UI -->
-          <h3>Search</h3>
-          <select id="fields" name="select">
-            <option> Filter by... </option>
-          </select>
-          <!-- <form id="form-data" class="mdc-menu-surface--anchor"> -->
-            <!-- <input id="find" type="text" name="" placeholder="Find...">   -->
-            <div id="hero">
-              <div class="mdc-menu mdc-menu-surface mdc-menu-surface--open">
-                <ul class="mdc-list" role="menu" aria-hidden="false" aria-orientation="vertical" tabindex="-1">
-                  <li class="mdc-list-item" role="menuitem">
-                    <span class="mdc-list-item__ripple"></span>
-                    <span class="mdc-list-item__text">A Menu Item</span>
-                  </li>
-                  <li class="mdc-list-item" role="menuitem">
-                    <span class="mdc-list-item__ripple"></span>
-                    <span class="mdc-list-item__text">Another Menu Item</span>
-                  </li>
-                </ul>
+
+          <form id="form-data" class="mdc-menu-surface--anchor">
+            <div id="select-menu-wrapper">
+              <div id="select-menu" class="mdc-select mdc-select--filled">
+                <input type="hidden" name="filter-input">
+                <div class="mdc-select__anchor"
+                    role="button"
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                    aria-labelledby="filter-label selected-filter">
+                  <span class="mdc-select__ripple"></span>
+                  <span id="filter-label" class="mdc-floating-label">Filter by...</span>
+                  <span class="mdc-select__selected-text-container">
+                    <span id="filter-selected-text" class="mdc-select__selected-text"></span>
+                  </span>
+                  <span class="mdc-select__dropdown-icon">
+                    <svg
+                        class="mdc-select__dropdown-icon-graphic"
+                        viewBox="7 10 10 5" focusable="false">
+                      <polygon
+                          class="mdc-select__dropdown-icon-inactive"
+                          stroke="none"
+                          fill-rule="evenodd"
+                          points="7 10 12 15 17 10">
+                      </polygon>
+                      <polygon
+                          class="mdc-select__dropdown-icon-active"
+                          stroke="none"
+                          fill-rule="evenodd"
+                          points="7 15 12 10 17 15">
+                      </polygon>
+                    </svg>
+                  </span>
+                  <span class="mdc-line-ripple"></span>
+                </div>
+              
+                <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
+                  <ul id="filter-listbox" class="mdc-list" role="listbox" aria-label="Filter listbox">
+                    <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" data-value="" role="option">
+                      <span class="mdc-list-item__ripple"></span>
+                    </li>
+                    <li id="option" class="mdc-list-item" aria-selected="false" role="option">
+                      <span class="mdc-list-item__ripple"></span>
+                      <span id="option-label" class="mdc-list-item__text"></span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
+          
+            <!-- <input id="find" type="text" name="" placeholder="Find...">   -->
+
             <br>
-          <!-- </form> -->
-          <button class="mdc-button mdc-button--outlined">
+          </form>
+          <button class="submit-button mdc-button mdc-button--raised">
             <span class="mdc-button__ripple"></span>
             <span class="mdc-button__label">Search</span>
           </button><br>
           <p style="font-weight: bold;">Note: Input is case sensitive. Please look through each example below.<br></p>
+
+        <!-- ******************** END SEARCH PAGE ******************** -->
         </div>
 
         <!-- ******************** RESULTS PAGE ******************** -->
         <div id="results" class="hidden">
           <h3>Results</h3>
+
+        <!-- ******************** END RESULTS PAGE ******************** -->
         </div>
 
         <!-- ******************** ABOUT PAGE ******************** -->
         <div id="about" class="hidden">
-          <h3>About</h3>
+          <h3>About this app</h3>
+
+          <p>
+            This web application was developed by Hector Cedeno Indriago during <br>
+            the 2021 Spring semester for the IT202 course in the University of <br>
+            Illinois-Chicago. <br>
+            The app shows you the most recent crimes in your area according to <br>
+            the City of Chicago database of crimes (since 2001, URL: <a></a>).
+          </p>        
+        <!-- ******************** END ABOUT PAGE ******************** -->
         </div>
 
-        <!-- ******************** END OF PAGES ******************** -->
+        <!-- ******************** END PAGE DISPLAYS ******************** -->
       </main>
 
-    <!-- ******************** END OF BODY ******************** -->
     </body>
 </html>

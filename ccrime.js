@@ -1,7 +1,12 @@
 import {MDCTabBar} from '@material/tab-bar';
 import {MDCRipple} from '@material/ripple';
 import {MDCMenu} from '@material/menu';
+import {MDCSelect} from '@material/select';
+import {MDCTopAppBar} from '@material/top-app-bar';
 
+const topAppBarElement = document.querySelector('.mdc-top-app-bar');
+const topAppBar = new MDCTopAppBar(topAppBarElement);
+const select = new MDCSelect(document.querySelector('.mdc-select'));
 const menu = new MDCMenu(document.querySelector('.mdc-menu'));
 const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
 const tabBar = new MDCTabBar(document.querySelector('.mdc-tab-bar'));
@@ -41,21 +46,18 @@ fetch("https://data.cityofchicago.org/resource/crimes.json")
 .then ( (response) => {return response.json() })
 .then ( (result) => {
     for (let field of Object.keys(result[0])) {
-        if (field[0] == ":") {
+        if (field[0] == ":" || field == "location") {
           continue;
         }
-        console.log(field);
-        // let opt = document.createElement("option");
-        // opt.innerText = field;
-        // document.querySelector("#fields").append(opt);
+        let initOption = document.querySelector("#option");
+        let newOption = initOption.cloneNode(true);
+        newOption.querySelector("#option-label").innerText = field;
+        document.querySelector("#filter-listbox").append(newOption);
         
-        // let example = document.createElement('a');
-        // example.innerHTML = field + ": " + result[0][field] + ".<br>";
-        // document.querySelector("#form").append(example);
+        let example = document.createElement('a');
+        example.innerHTML = field + ": " + result[0][field] + ".<br>";
+        document.querySelector("div#search").append(example);
 
     }
-//   let br = document.createElement("br");
-//   document.querySelector("#form").append(br);
-
 });
 
