@@ -20,8 +20,11 @@
 @use "@material/menu/mdc-menu";
 @use "@material/select";
 @use "@material/select/styles";
+@use "@material/card";
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+@include card.core-styles;
 @include icon-button.core-styles;
 
 // PALETTE: DARK SIENNA (3E000C), SILVER (BFC0C0), WHITE,
@@ -96,6 +99,11 @@ $mdc-typography-styles-caption: (
 h3 {
   font-family: map.get($mdc-typography-styles-headline3, "font-family");
   font-size: map.get($mdc-typography-styles-headline3, "font-size");
+  color: rgb(62, 0, 12);
+}
+h4 {
+  font-family: map.get($mdc-typography-styles-headline4, "font-family");
+  font-size: map.get($mdc-typography-styles-headline4, "font-size");
 }
 p, a, span {
   font-family: map-get($mdc-typography-styles-body1, "font-family");
@@ -105,5 +113,13 @@ p, a, span {
   padding-top: 106px;
 }
 
+// ******************** ABOUT PAGE ********************
+div#about {
+  text-align: justify !important;
+  width: 75% !important;
+}
 
+a#api-url {
+  color: black !important;
+}
 

@@ -3,7 +3,11 @@
     <head>
         <link rel="stylesheet" href="chicrime.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJi4QhgfV4bO-dyCKD2eXZqG4sk7n4zrs&callback=initMap"></script>
         <script src="chicrime.js" async></script>
+        <script src="map-ccrime.js"></script>
+
         <title>Chi-Crime</title>
     </head>
 
@@ -72,9 +76,11 @@
 
         <!-- ******************** HOME PAGE ******************** -->
         <div id="home" class="shown">
-          <h3>Home</h3>
+          <h3>Showing Recent Crimes Around You</h3>
+          <span>*Note: This feature only works with an internet connection, while located in or near Chicago.</span>
+          
           <!-- Show geolocation feature -->
-        
+          <div id="home-map" style="width:100%;height:500px;"></div>
         <!-- ******************** END HOME PAGE ******************** -->
         </div>
 
@@ -148,20 +154,28 @@
         <div id="results" class="hidden">
           <h3>Results</h3>
 
+          <div id="results-map" style="width:100%;height:500px;"></div>
         <!-- ******************** END RESULTS PAGE ******************** -->
         </div>
 
         <!-- ******************** ABOUT PAGE ******************** -->
         <div id="about" class="hidden">
-          <h3>About this app</h3>
-
+          <h3 id="about-h">About this app</h3>
           <p>
-            This web application was developed by Hector Cedeno Indriago during <br>
-            the 2021 Spring semester for the IT202 course in the University of <br>
-            Illinois-Chicago. <br>
-            The app shows you the most recent crimes in your area according to <br>
-            the City of Chicago database of crimes (since 2001, URL: <a></a>).
+            This web application was developed by Hector Cedeno Indriago during
+            the 2021 Spring semester for the IT202 course in the University of
+            Illinois-Chicago.
+          </p>
+          <p>
+            The app shows you the most recent crimes in your area according to
+            the City of Chicago database of crimes (<a id="api-url" target="_blank" href="https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-Present/ijzp-q8t2">Crimes - 2001 to Present | City of Chicago | Data Portal</a>).
+            It also allows you to search the database with various filtering options (only 
+            one filter at a time though). I hope this app is helpful to you!
           </p>        
+          <p>
+            Hector Cedeno Indriago <br>
+            E-mail: hcedenoindriago@gmail.com
+          </p>
         <!-- ******************** END ABOUT PAGE ******************** -->
         </div>
 
